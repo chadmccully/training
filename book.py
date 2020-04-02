@@ -1,6 +1,7 @@
 #Book
 class Book:
-    def __init__(self, name, copies=0):
+    def __init__(self, id, name, copies=0):
+        self.id = id
         self.title = name
         self.copies = copies
 
@@ -10,6 +11,8 @@ class Book:
     def decrease_copies(self, how_many):
         self.copies -= how_many
 
+    def add_review(self, review, score):
+        review(self.id, review, score)
 
 tales = Book("Tales from the crypt")
 once = Book("Once upon a time")
